@@ -1,0 +1,67 @@
+
+/* Custom CSS for flip screen in notes component */
+
+
+
+.flip-card {
+     width: 100%!important;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+
+}
+
+.frontside, .backside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.frontside {
+    /* Customize front side styling */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    border: 2px solid gray;
+    padding: 3px;
+
+}
+
+.backside {
+    /* Customize back side styling */
+    width: 100%;
+    display: flex;
+   overflow:hidden ;
+    transform: rotateY(180deg);
+}
+
+/* customization of text-editor */
+.text-editor{
+    border: 2px solid gray;
+}
+
+/*chart size*/
+.chartItem canvas {
+    max-width: 100%;
+    height: 300px !important; /* Adjust height as needed */
+  }
+
+  @media (max-width: 600px) {
+    .chartItem canvas {
+      height: 200px !important; /* Adjust height for smaller screens */
+    }
+  }
